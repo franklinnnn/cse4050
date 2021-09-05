@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 4050 Assignment - JSON</title>
+</head>
+<body>
+    <p>This is a file with a script element.</p>
+
+    <script>
+        console.log("Hello");
+
+        // Object to string
+        const obj1 = {x: 3, y: 4,};
+        console.log(obj1.x, obj1.y);
+        const str1 = JSON.stringify(obj1);
+        console.log(str1);
+        
+        // String to object
+        const str2 = '{"a":33,"b":44}';
+        const obj2 = JSON.parse(str2);
+        console.log(obj2);
+
+    </script>
+</body>
+</html>
