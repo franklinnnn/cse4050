@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 4050 Assignment - API</title>
+    <link rel="stylesheet" href="api_style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h2>Sunrise times in major cities</h2>
+            <div id="sunrise">
+                <select id="city" onchange="getSelectedValue(); getDog()">
+                    <option value="Select" selected disabled>Select city</option>
+                    <option value="San Bernardino">San Bernardino</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="New York City">New York City</option>
+                    <option value="London">London</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Sydney">Sydney</option>
+                </select>
+
+            </div>
+           
+            <div id="result">
+                
+            </div>
+            <div id="dog">
+                 
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+       // Fetch the data of the city depending on the option selected from the dropdown
+        function getSelectedValue(){
+            var city = document.getElementById("city");
+            var result = city.options[city.selectedIndex].value;
+
+            if (result == "San Bernardino"){
+                fetch("https://api.sunrise-sunset.org/json?lat=34.1083&lng=-117.2898&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise);
+                    //document.getElementById("result").innerHTML = 'Sunrise in San Bernardino: ' + d;
+                    document.getElementById("result").innerHTML = 'Sunrise in San Bernardino: '+d.getMonth()+'/'+d.getDate()+'/'+d.getFullYear()+', '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+' AM';
+                });
+            }
+            if (result == "Los Angeles"){
+                fetch("https://api.sunrise-sunset.org/json?lat=34.0522&lng=-118.2437&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+                    document.getElementById("result").innerHTML = 'Sunrise in Los Angeles: ' + d;
+                    //document.getElementById("result").innerHTML = 'Sunrise today in Los Angeles: '+d.getHours()+':'+d.getMinutes()+' AM';
+                }); 
+            }
+            if (result == "New York City"){
+                fetch("https://api.sunrise-sunset.org/json?lat=40.7128&lng=-74.0060&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "America/New_York"});
+                    document.getElementById("result").innerHTML = 'Sunrise in New York City: ' + d;
+                    //document.getElementById("result").innerHTML = 'Sunrise today in New York City: '+d.getHours()+':'+d.getMinutes()+' AM';
+                }); 
+            }
+            if (result == "London"){
+                fetch("https://api.sunrise-sunset.org/json?lat=51.5074&lng=-0.1278&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Europe/London"});
+                    document.getElementById("result").innerHTML = 'Sunrise in London: ' + d;
+                    //document.getElementById("result").innerHTML = 'Sunrise today in London: '+d.getHours()+':'+d.getMinutes()+' AM';
+                }); 
+            }
+            if (result == "Tokyo"){
+                fetch("https://api.sunrise-sunset.org/json?lat=35.6762&lng=139.6593&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
+                    document.getElementById("result").innerHTML = 'Sunrise in Tokyo: ' + d;
+                    //document.getElementById("result").innerHTML = 'Sunrise today in Tokyo: '+d.getHours()+':'+d.getMinutes()+' AM';
+                }); 
+            }
+            if (result == "Sydney"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-33.8688&lng=151.2093&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+                    document.getElementById("result").innerHTML = 'Sunrise in Sydney: ' + d;
+                    //document.getElementById("result").innerHTML = 'Sunrise today in Sydney: '+d.getHours()+':'+d.getMinutes()+' AM';
+                }); 
+            }
+
+        }
+        
+        // Fetch url of random image of a dog, then place url in <img> tag
+        function getDog(){
+            fetch("https://dog.ceo/api/breeds/image/random")
+            .then(response => response.json())
+            .then(data => {
+                var d = data.message;
+                console.log(d);
+                document.getElementById("dog").innerHTML = '<img src="'+d+'">';
+            });
+        }
+
+    </script>
+</body>
+</html>
