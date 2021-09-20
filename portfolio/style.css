@@ -1,0 +1,39 @@
+.navigation{
+    background-color: #00697e;
+}
+
+.main{
+    background-color: #b3c6ca;
+}
+
+.main .top{
+    background-color: #009cbd;
+    margin: 5px;
+    padding: 5px;
+}
+
+.main .banner{
+    background-color: #0092b1;
+    margin: 5px;
+    padding: 5px;
+}
+.main .about{
+    background-color: #0092b1;
+    margin: 5px;
+    padding: 5px;
+}
+.main .projects{
+    background-color: #0092b1;
+    margin: 5px;
+    padding: 5px;
+}
+.main .projects .project-box{
+    background-color: #59b3c6;
+    margin: 5px;
+    padding: 5px;
+}
+.main .contact{
+    background-color: #0092b1;
+    margin: 5px;
+    padding: 5px;
+}
