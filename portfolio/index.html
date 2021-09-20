@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="top">
+                <a href="#" class="logo">Portfolio</a>
+            </div>
+
+            <section class="banner" id="banner">
+                <div class="content">
+                    <div class="dp">
+                        <img src="user.jpg">
+                    </div>
+                    <h3>Franklin Assa</h3>
+                    <p>Computer Science major</p>
+                    <ul class="sns">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <div class="title">
+                    <h2>About Me</h2>
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia beatae numquam ipsa ut amet error vel at, blanditiis nobis, quidem minima, a est accusantium dolorem impedit sequi! Cupiditate accusamus quibusdam est, doloribus similique officia aperiam eos minima totam vel deleniti quis veritatis? Praesentium dolorem delectus ab quos quod. Laborum excepturi voluptatibus quaerat vel in eveniet, saepe quis omnis minus velit. Dolore adipisci nihil in asperiores deleniti corporis excepturi blanditiis reprehenderit facilis voluptate incidunt eligendi iste ut repellat velit commodi aspernatur, tempore placeat culpa magnam nobis omnis eius! Adipisci, commodi. Repellendus praesentium quas veniam nihil quos corporis doloremque sed excepturi consectetur?</p>
+                    </div>
+                    <div class="dp">
+                        <img src="pic.jpg">
+                    </div>
+                </div>
+            </section>
+          
+            <section class="projects" id="projects">
+                <div class="title">
+                    <h2>Projects</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi delectus doloremque, corporis ullam magni tempora voluptas modi provident quasi natus dolor asperiores optio laborum reprehenderit.</p>
+                </div>
+                <div class="content">
+                    <div class="project-box">
+                        <div class="image-box">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="text-box">
+                            <h3>Project 1</h3>
+                        </div>
+                    </div>
+                    <div class="project-box">
+                        <div class="image-box">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="text-box">
+                            <h3>Project 2</h3>
+                        </div>
+                    </div>
+                    <div class="project-box">
+                        <div class="image-box">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="text-box">
+                            <h3>Project 3</h3>
+                        </div>
+                    </div>
+                    <!-- <div class="project-box">
+                        <div class="image-box">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="text-box">
+                            <h3>Project 4</h3>
+                        </div>
+                    </div>
+                    <div class="project-box">
+                        <div class="image-box">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="text-box">
+                            <h3>Project 5</h3>
+                        </div>
+                    </div>
+                    <div class="project-box">
+                        <div class="image-box">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="text-box">
+                            <h3>Project 6</h3>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+            
+            <section class="contact" id="contact">
+                <div class="title">
+                    <h2>Contact</h2>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" method="post">
+                        <div class="row1">
+                            <input type="text" name="" placeholder="Name" required>
+                        </div>
+                        <div class="row2">
+                            <input type="email" name="" placeholder="Email" required>
+                        </div>
+                        <div class="row2">
+                            <textarea placeholder="Message" required></textarea>
+                        </div>
+                        <div class="row2">
+                            <input type="submit" value="Send" onclick="contactSend()">
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <script>
+        function contactSend(){
+            alert("Your message has been sent. Thank you!")
+            document.getElementById("contact-form").reset()
+        }
+    </script>
+</body>
+</html>
