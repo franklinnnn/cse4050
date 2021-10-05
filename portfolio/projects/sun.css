@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap)');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #777;
+}
+
+.topbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 40px;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.topbar a{
+    text-decoration: none;
+    color: #777;
+    font-weight: 500px;
+}
+.container{
+    position: relative;
+    background: whitesmoke;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    box-shadow: 5px 5px 30px;
+    justify-content: center;
+    align-items: center;
+}
+.container h2{
+    position: relative;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+section{
+    position: relative;
+    display: flex;
+    width: 500px;
+    padding: 10px;
+    border-bottom: 1px solid;
+    justify-content: center;
+    align-items: center;
+}
+.container .dropdown{
+    position: relative;
+    display: flex;
+    
+}
+.container .dropdown .content{
+    position: relative;
+    width: 100%;
+}
+.container .dropdown .content select{
+    position: relative;
+    width: 100%;
+}
+
+.result{
+    position: relative;
+    display: block;
+}
+.result .content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid;
+}
+.result .content .sun{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.result .content .sun i{
+    padding: 0;
+    font-size: 50px;
+}
+.result .content .sun .result-data{
+    text-align: center;
+    font-weight: 500;
+}
+.result .result-city{
+    display: flex;
+    position: relative;
+    height: 20px;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}

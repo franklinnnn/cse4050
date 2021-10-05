@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="calc.css">
+    <title>Calculator Project</title>
+</head>
+<body>
+    <div class="topbar">
+        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        <a href="../index.html#projects">Return to main page</a>
+    </div>
+    <div class="main">
+        <div class="container">
+            <form class="calculator" name="calc">
+                <input id="result" class="value" type="text" readonly="">
+                <span class="num clear" value=" " onclick="clr()">C</span>
+                <span class="num" value="/" onclick="dis('/')">/</span>
+                <span class="num" value="*" onclick="dis('*')">*</span>
+                <span class="num" value="-" onclick="dis('-')">-</span>
+                <span class="num" value="7" onclick="dis('7')">7</span>
+                <span class="num" value="8" onclick="dis('8')">8</span>
+                <span class="num" value="9" onclick="dis('9')">9</span>
+                <span class="num plus" value="+" onclick="dis('+')">+</span>
+                <span class="num" value="4" onclick="dis('4')">4</span>
+                <span class="num" value="5" onclick="dis('5')">5</span>
+                <span class="num" value="6" onclick="dis('6')">6</span>
+                <span class="num" value="1" onclick="dis('1')">1</span>
+                <span class="num" value="2" onclick="dis('2')">2</span>
+                <span class="num" value="3" onclick="dis('3')">3</span>
+                <span class="num equal" value="=" onclick="solve()">=</span>
+                <span class="num zero" value="0" onclick="dis('0')">0</span>
+                <span class="num" value="." onclick="dis('.')">.</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Displays value
+        function dis(val){
+            document.getElementById("result").value += val
+        }
+
+        // Evaluates and returns result
+        function solve(){
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+
+        // Clears display
+        function clr(){
+            document.getElementById("result").value = ""
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #777;
+}
+
+.topbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 40px;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.topbar a{
+    text-decoration: none;
+    color: #777;
+    font-weight: 500px;
+}
+
+.container{
+    position: relative;
+    background: whitesmoke;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    box-shadow: 5px 5px 30px;
+}
+.container .calculator{
+    position: relative;
+    display: grid;
+}
+.container .calculator .value{
+    grid-column: span 4;
+    height: 140px;
+    width: 300px;
+    padding: 10px;
+    text-align: right;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #777;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+.container .calculator span{
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;    
+    font-weight: 400;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+    color: #777;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+.container .calculator .plus{
+    grid-row: span 2;
+    height: 150px;
+}
+.container .calculator .zero{
+    grid-column: span 2;
+    width: 150px;
+}
+.container .calculator .equal{
+    grid-row: span 2;
+    height: 150px;
+    background: #999;
+}

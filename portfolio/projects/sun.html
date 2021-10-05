@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="sun.css">
+    <title>Sun Project</title>
+</head>
+<body>
+    <div class="topbar">
+        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        <a href="../index.html#projects">Return to main page</a>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="title">
+                <h2>Sunrise times in major cities</h2>
+            </div>
+            <section class="dropdown">
+                <div class="content">
+                    <select id="city" onchange="select()">
+                        <option value="Select" selected disabled>Select city</option>
+                        <option value="Honolulu">Honolulu</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="New York City">New York City</option>
+                        <option value="London">London</option>
+                        <option value="Tokyo">Tokyo</option>
+                        <option value="Rio di Janeiro">Rio di Janeiro</option>
+                        <option value="Johannesburg">Johannesburg</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Jakarta">Jakarta</option>
+                        <option value="Sydney">Sydney</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="result">
+                <div class="content">
+                    <div class="sun">
+                        <h3>Sunrise</h3>
+                        <div class="icon">
+                            <i class="fa fa-sun-o" aria-hidden="true"></i>
+                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                        </div>
+                        <div class="result-data" id="sunrise"></div>
+                    </div>
+                    <div class="sun">
+                        <h3>Sunset</h3>
+                        <div class="icon">
+                            <i class="fa fa-sun-o" aria-hidden="true"></i>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="result-data" id="sunset"></div>
+                    </div>
+
+                </div>
+                <div class="result-city" id="result-city"></div>
+            </section>
+
+        </div>
+    </div>
+    
+    <script>
+        function select(){
+            displayCity()
+            getSunrise()
+            getSunset()
+        }
+
+        function displayCity(){
+            var city = document.getElementById("city")
+            var selected = city.options[city.selectedIndex].value;
+
+            if(selected == "Honolulu"){
+                document.getElementById("result-city").innerHTML = "Honolulu, USA"
+            }
+            if(selected == "Los Angeles"){
+                document.getElementById("result-city").innerHTML = "Los Angeles, USA"
+            }
+            if(selected == "New York City"){
+                document.getElementById("result-city").innerHTML = "New York City, USA"
+            }
+            if(selected == "London"){
+                document.getElementById("result-city").innerHTML = "London, UK"
+            }
+            if(selected == "Rio di Janeiro"){
+                document.getElementById("result-city").innerHTML = "Rio di Janeiro, Brazil"
+            }
+            if(selected == "Johannesburg"){
+                document.getElementById("result-city").innerHTML = "Johannesburg, South Africa"
+            }
+            if(selected == "Mumbai"){
+                document.getElementById("result-city").innerHTML = "Mumbai, India"
+            }
+            if(selected == "Jakarta"){
+                document.getElementById("result-city").innerHTML = "Jakarta, Indonesia"
+            }
+            if(selected == "Sydney"){
+                document.getElementById("result-city").innerHTML = "Sydney, Australia"
+            }
+        }
+
+        function getSunrise(){
+            var city = document.getElementById("city")
+            var selected = city.options[city.selectedIndex].value;
+
+            if(selected == "Honolulu"){
+                fetch("https://api.sunrise-sunset.org/json?lat=21.3069&lng=-157.8583&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Pacific/Honolulu"})
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if(selected == "Los Angeles"){
+                fetch("https://api.sunrise-sunset.org/json?lat=34.0522&lng=-118.2437&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "New York City"){
+                fetch("https://api.sunrise-sunset.org/json?lat=40.7128&lng=-74.0060&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "America/New_York"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "London"){
+                fetch("https://api.sunrise-sunset.org/json?lat=51.5074&lng=-0.1278&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Europe/London"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "Tokyo"){
+                fetch("https://api.sunrise-sunset.org/json?lat=35.6762&lng=139.6503&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "Rio di Janeiro"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-22.9068&lng=-43.1729&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Brazil/East"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "Johannesburg"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-26.2041&lng=28.0473&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Africa/Johannesburg"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "Mumbai"){
+                fetch("https://api.sunrise-sunset.org/json?lat=19.0760&lng=72.8777&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "Jakarta"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-6.2088&lng=106.8556&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Asia/Jakarta"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+            if (selected == "Sydney"){
+                fetch("https://api.sunrise-sunset.org/json?lat=33.8688&lng=151.2093&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunrise).toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+                    document.getElementById("sunrise").innerHTML = d
+                })
+            }
+        }
+
+        function getSunset(){
+            var city = document.getElementById("city")
+            var selected = city.options[city.selectedIndex].value;
+
+            if(selected == "Honolulu"){
+                fetch("https://api.sunrise-sunset.org/json?lat=21.3069&lng=-157.8583&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Pacific/Honolulu"})
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if(selected == "Los Angeles"){
+                fetch("https://api.sunrise-sunset.org/json?lat=34.0522&lng=-118.2437&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "New York City"){
+                fetch("https://api.sunrise-sunset.org/json?lat=40.7128&lng=-74.0060&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "America/New_York"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "London"){
+                fetch("https://api.sunrise-sunset.org/json?lat=51.5074&lng=-0.1278&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Europe/London"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "Tokyo"){
+                fetch("https://api.sunrise-sunset.org/json?lat=35.6762&lng=139.6503&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "Rio di Janeiro"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-22.9068&lng=-43.1729&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Brazil/East"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "Johannesburg"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-26.2041&lng=28.0473&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Africa/Johannesburg"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "Mumbai"){
+                fetch("https://api.sunrise-sunset.org/json?lat=19.0760&lng=72.8777&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "Jakarta"){
+                fetch("https://api.sunrise-sunset.org/json?lat=-6.2088&lng=106.8556&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Asia/Jakarta"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+            if (selected == "Sydney"){
+                fetch("https://api.sunrise-sunset.org/json?lat=33.8688&lng=151.2093&formatted=0")
+                .then(response => response.json()) 
+                .then(data => {
+                    const d = new Date(data.results.sunset).toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+                    document.getElementById("sunset").innerHTML = d
+                })
+            }
+        }
+    </script>
+</body>
+</html>
