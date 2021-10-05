@@ -246,6 +246,11 @@ p{
     height: 200px;
     overflow: hidden;
 }
+.projects .content .project-box a{
+    display: block;
+    text-decoration: none;
+}
+
 .projects .content .project-box .image-box{
     position: relative;
     width: 100%;
@@ -266,6 +271,7 @@ p{
 }
 .projects .content .project-box .text-box{
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
