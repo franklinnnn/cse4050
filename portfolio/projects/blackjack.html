@@ -5,33 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="blackjack.css">
-    <title>Blackjack Project</title>
+    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
 </head>
 <body>
     <div class="topbar">
         <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         <a href="../index.html#projects">Return to main page</a>
     </div>
-    <div class="main">
-        <div class="container">
-            <h1>Blackjack</h1>
-            <div class="table">
-                <div class="msg">
-                    <p id="message-el">Want to play a round?</p>
-                </div>
-                <div class="player">
-                    <p id="p-cards">Cards:</p>
-                    <p id="p-sum">Sum:</p>
-                </div>
-                <div class="buttons">
-                    <button onclick="startGame()">START GAME</button>
-                    <button onclick="newCard()">NEW CARD</button>
-                </div>
-            
+    <div class="container">
+        <h2>Blackjack</h2>
+
+        <!-- <p id="message"> </p>
+        <button id="start-btn" onclick="startGame()">Start game</button>
+        <button id="hit-btn" onclick="hitBtn()">Hit</button>
+        <button id="stay-btn" onclick="stayBtn()">Stay</button> -->
+
+        <div class="table">
+            <div class="dealer">
+                <div class="score" id="dealer-score">Score</div>
+                <div class="dealer-cards" id="dealer-cards"> </div>
+            </div>
+            <div class="text-area" id="text-area">Welcome to Blackjack!</div>
+            <div class="player">
+                <div class="player-cards" id="player-cards"> </div>
+                <div class="score" id="player-score">Score</div>
             </div>
         </div>
+        <div class="control" id="control">
+            <button id="start-btn" onclick="startGame()">Start game</button>
+            <button id="hit-btn" onclick="hitBtn()">Hit</button>
+            <button id="stay-btn" onclick="stayBtn()">Stay</button>
+        </div>
     </div>
-    <script src="blackjack.js"></script>   
+
+    <script src="test.js"></script>   
+
 </body>
 </html>
