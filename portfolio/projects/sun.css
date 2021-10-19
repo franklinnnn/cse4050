@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #777;
+    background-image: linear-gradient( red, yellow);
 }
 
 .topbar{
@@ -34,12 +34,12 @@ body{
 }
 .container{
     position: relative;
-    background: whitesmoke;
+    background: #fff;
     border-radius: 5px;
     overflow: hidden;
     z-index: 10;
-    border-top: 1px solid;
-    border-left: 1px solid;
+    border-top: 1px solid solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid solid rgba(0, 0, 0, 0.2);
     box-shadow: 5px 5px 30px;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@ section{
 .container .dropdown{
     position: relative;
     display: flex;
-    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .container .dropdown .content{
     position: relative;
@@ -74,6 +74,10 @@ section{
     width: 100%;
 }
 
+#result{
+    display: none;
+}
+
 .result{
     position: relative;
     display: block;
@@ -81,8 +85,8 @@ section{
 .result .content{
     display: flex;
     justify-content: space-between;
+    color: #333;
     width: 100%;
-    border: 1px solid;
 }
 .result .content .sun{
     display: flex;
@@ -92,13 +96,39 @@ section{
     justify-content: center;
     align-items: center;
 }
-.result .content .sun i{
+.result .content .sun .icon{
+    display: flex;
     padding: 0;
     font-size: 50px;
 }
+@-webkit-keyframes rotating{
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+.fa-sun-o{
+    -webkit-animation: rotating 10s linear infinite;
+}
+.result .content .sun .icon .fa-arrow-up{
+    padding: 0;
+    font-size: 35px;
+}
+.result .content .sun .icon .fa-arrow-down{
+    padding: 0;
+    font-size: 35px;
+}
 .result .content .sun .result-data{
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #333;
+
 }
 .result .result-city{
     display: flex;
@@ -107,6 +137,7 @@ section{
     padding: 20px;
     font-size: 25px;
     font-weight: 500;
+    color: #333;
     justify-content: center;
     align-items: center;
 }
