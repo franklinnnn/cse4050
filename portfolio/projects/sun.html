@@ -16,12 +16,12 @@
     <div class="main">
         <div class="container">
             <div class="title">
-                <h2>Sunrise times in major cities</h2>
+                <h2>Sunrise and Sunset times</h2>
             </div>
             <section class="dropdown">
                 <div class="content">
                     <select id="city" onchange="select()">
-                        <option value="Select" selected disabled>Select city</option>
+                        <option value="Select" selected disabled hidden>Select city</option>
                         <option value="Honolulu">Honolulu</option>
                         <option value="Los Angeles">Los Angeles</option>
                         <option value="New York City">New York City</option>
@@ -36,7 +36,7 @@
                 </div>
             </section>
 
-            <section class="result">
+            <section class="result" id="result">
                 <div class="content">
                     <div class="sun">
                         <h3>Sunrise</h3>
@@ -67,6 +67,17 @@
             displayCity()
             getSunrise()
             getSunset()
+            showResult()
+        }
+
+        function showResult(){
+            var content = document.getElementById('result');
+            if(content.style.display == 'none'){
+                content.style.display = 'block';
+            }
+            else{
+                content.style.display = 'block';
+            }
         }
 
         function displayCity(){
@@ -84,6 +95,9 @@
             }
             if(selected == "London"){
                 document.getElementById("result-city").innerHTML = "London, UK"
+            }
+            if(selected == "Tokyo"){
+                document.getElementById("result-city").innerHTML = "Tokyo, Japan"
             }
             if(selected == "Rio di Janeiro"){
                 document.getElementById("result-city").innerHTML = "Rio di Janeiro, Brazil"
