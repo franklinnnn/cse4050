@@ -127,7 +127,6 @@ function getCardValue(card){
 
 function showStatus(){
     if(!gameStarted){
-        //message.innerHTML = "Play a game";
         text.innerHTML = "Play a game";
         return;
     }
@@ -140,8 +139,6 @@ function showStatus(){
         dealerCardString += getCardString(dealerCards[i]);
     }
     updateScores();
-
-    // message.innerHTML = dealerCardString + dealerScore + "\n\n" + playerCardString + playerScore;
     
     dcards.innerHTML = dealerCardString;
     dscore.innerHTML = dealerScore;
@@ -150,11 +147,9 @@ function showStatus(){
 
     if(gameOver){
         if(gameWin){
-            //message.innerHTML += "You win";
             text.innerHTML += "You win!";
       }
         else{
-            //message.innerHTML += "Dealer wins";
             text.innerHTML += "Dealer wins";
         }
     }
@@ -182,7 +177,5 @@ function updateScores(){
 }
 
 function getCard(){ 
-    let c = deck.shift();
-    return c;
-    //return deck.shift();
+    return deck.shift();
 }
