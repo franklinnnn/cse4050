@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="sun.css">
     <title>Sun Project</title>
 </head>
-<body>
+<body id="bg">
     <div class="topbar">
         <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         <a href="../index.html#projects">Return to main page</a>
@@ -61,8 +61,17 @@
 
         </div>
     </div>
+
+    <div class="credit" id="photo">
+        <i class="fa fa-camera" aria-hidden="true"></i>
+        <span id="credit"></span>
+    </div>
     
     <script>
+
+        var credit = document.getElementById("photo");
+        credit.style.display = 'none';
+        
         function select(){
             displayCity()
             getSunrise()
@@ -71,13 +80,14 @@
         }
 
         function showResult(){
-            var content = document.getElementById('result');
-            if(content.style.display == 'none'){
-                content.style.display = 'block';
+            var content = document.getElementById("result");
+            if(content.style.display == "none"){
+                content.style.display = "block";
             }
             else{
-                content.style.display = 'block';
+                content.style.display = "block";
             }
+            credit.style.display = 'inline';
         }
 
         function displayCity(){
@@ -85,34 +95,54 @@
             var selected = city.options[city.selectedIndex].value;
 
             if(selected == "Honolulu"){
-                document.getElementById("result-city").innerHTML = "Honolulu, USA"
+                document.getElementById("result-city").innerHTML = "Honolulu, USA";
+                document.getElementById("credit").innerHTML = "Jess Loiterton";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-honolulu.jpg)";
             }
             if(selected == "Los Angeles"){
-                document.getElementById("result-city").innerHTML = "Los Angeles, USA"
+                document.getElementById("result-city").innerHTML = "Los Angeles, USA";
+                document.getElementById("credit").innerHTML = "Kyle Karbowski";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-los-angeles.jpg)";
             }
             if(selected == "New York City"){
-                document.getElementById("result-city").innerHTML = "New York City, USA"
+                document.getElementById("result-city").innerHTML = "New York City, USA";
+                document.getElementById("credit").innerHTML = "Chris Schippers";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-new-york-city.jpg)";
             }
             if(selected == "London"){
-                document.getElementById("result-city").innerHTML = "London, UK"
+                document.getElementById("result-city").innerHTML = "London, UK";
+                document.getElementById("credit").innerHTML = "Miklos Magyar";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-london.jpg)";
             }
             if(selected == "Tokyo"){
-                document.getElementById("result-city").innerHTML = "Tokyo, Japan"
+                document.getElementById("result-city").innerHTML = "Tokyo, Japan";
+                document.getElementById("credit").innerHTML = "Nick Kwan";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-tokyo.jpg)";
             }
             if(selected == "Rio di Janeiro"){
-                document.getElementById("result-city").innerHTML = "Rio di Janeiro, Brazil"
+                document.getElementById("result-city").innerHTML = "Rio di Janeiro, Brazil";
+                document.getElementById("credit").innerHTML = "Sebastian Mantel";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-rio-di-janeiro.jpg)";
             }
             if(selected == "Johannesburg"){
-                document.getElementById("result-city").innerHTML = "Johannesburg, South Africa"
+                document.getElementById("result-city").innerHTML = "Johannesburg, South Africa";
+                document.getElementById("credit").innerHTML = "Clodagh da Paixao";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-johannesburg.jpg)";
             }
             if(selected == "Mumbai"){
-                document.getElementById("result-city").innerHTML = "Mumbai, India"
+                document.getElementById("result-city").innerHTML = "Mumbai, India";
+                document.getElementById("credit").innerHTML = "Hardik Joshi";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-mumbai.jpg)";
             }
             if(selected == "Jakarta"){
-                document.getElementById("result-city").innerHTML = "Jakarta, Indonesia"
+                document.getElementById("result-city").innerHTML = "Jakarta, Indonesia";
+                document.getElementById("credit").innerHTML = "Alifia Harina";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-jakarta.jpg)";
             }
             if(selected == "Sydney"){
-                document.getElementById("result-city").innerHTML = "Sydney, Australia"
+                document.getElementById("result-city").innerHTML = "Sydney, Australia";
+                document.getElementById("credit").innerHTML = "Tiff Ng";
+                document.getElementById("bg").style.backgroundImage = "url(images/sun-sydney.jpg)";
             }
         }
 
