@@ -18,10 +18,10 @@
     </div>  
       <div class="navigation">
             <ul>
-                <li><a href="#banner">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#banner" onclick="menu()">Home</a></li>
+                <li><a href="#about" onclick="menu()">About</a></li>
+                <li><a href="#projects" onclick="menu()">Projects</a></li>
+                <li><a href="#contact" onclick="menu()">Contact</a></li>
             </ul>
         </div>
         <div class="main">
@@ -70,7 +70,7 @@
                 <div class="content">
                     <div class="project-box">
                         <div class="image-box">
-                            <img src="projects/img1.jpeg">
+                            <img src="projects/images/sun-honolulu.jpg">
                         </div>
                         <div class="text-box">
                             <a href="projects/sun.html"><h3>Project 1</h3></a>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="project-box">
                         <div class="image-box">
-                            <img src="projects/img2.jpeg">
+                            <img src="projects/images/calcbg.jpg">
                         </div>
                         <div class="text-box">
                             <a href="projects/calc.html"><h3>Project 2</h3></a>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="project-box">
                         <div class="image-box">
-                            <img src="projects/img3.jpeg">
+                            <img src="projects/images/bjbg.jpg">
                         </div>
                         <div class="text-box">
                             <a href="projects/blackjack.html"><h3>Project 3</h3></a>
@@ -131,6 +131,13 @@
             topbar.classList.toggle('active');
             navigation.classList.toggle('active');
             main.classList.toggle('active');
+        }
+
+        function menu(){
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            navigation.classList.remove('active');
+            main.classList.remove('active');
         }
     </script>
 </body>
