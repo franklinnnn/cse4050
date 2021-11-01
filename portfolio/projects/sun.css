@@ -13,6 +13,8 @@ body{
     align-items: center;
     min-height: 100vh;
     background-image: linear-gradient( red, yellow);
+    background-size: cover;
+    background-position: center;
 }
 
 .topbar{
@@ -43,7 +45,10 @@ body{
     box-shadow: 5px 5px 30px;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
 }
+
 .container h2{
     position: relative;
     font-size: 20px;
@@ -54,7 +59,7 @@ body{
 section{
     position: relative;
     display: flex;
-    width: 500px;
+    width: 600px;
     padding: 10px;
     border-bottom: 1px solid;
     justify-content: center;
@@ -111,19 +116,26 @@ section{
 }
 .fa-sun-o{
     -webkit-animation: rotating 10s linear infinite;
+    color: #FF9F01;
 }
 .result .content .sun .icon .fa-arrow-up{
     padding: 0;
     font-size: 35px;
+    background: -webkit-linear-gradient(#E96D0E, #E2B11A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .result .content .sun .icon .fa-arrow-down{
     padding: 0;
     font-size: 35px;
+    background: -webkit-linear-gradient(#3055B2, #001344);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .result .content .sun .result-data{
     text-align: center;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 17px;
     color: #fff;
     margin-top: 10px;
     padding: 5px 10px;
@@ -140,4 +152,23 @@ section{
     color: #333;
     justify-content: center;
     align-items: center;
+}
+
+.credit{
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    left: 2%;
+    top: 95%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@media(max-width: 500px){
+    section{
+        width: 95%;
+    }
+    .result .content{
+        flex-direction: column;
+    }
 }
